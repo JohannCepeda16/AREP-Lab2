@@ -1,7 +1,6 @@
 package co.edu.escuelaing.herokusocketprimer;
 
 import co.edu.escuelaing.herokusocketprimer.model.ConsumerPeticiones;
-import co.edu.escuelaing.herokusocketprimer.model.Interprete;
 import java.net.*;
 import java.io.*;
 import java.util.concurrent.ExecutorService;
@@ -26,7 +25,8 @@ public class HttpServer {
         while (running) {
             Socket clientSocket;
             clientSocket = serverSocket.accept();
-            pool.submit(new ConsumerPeticiones(clientSocket));
+            ConsumerPeticiones<?> consumer = new ConsumerPeticiones<>(clientSocket);
+            pool.submit(consumer);
         }
 
         serverSocket.close();
