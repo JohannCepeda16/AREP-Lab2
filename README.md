@@ -1,7 +1,7 @@
 # Servidor web concurrente
 En este proyecto se resuelven el siguiente ejercicio:
 
-* Escriba un servidor web que soporte múltiples solicitudes seguidas (concurrentes). El servidor debe retornar todos los archivos solicitados, incluyendo páginas html e imágenes.
+* Escriba un servidor web que soporte múlltiples solicitudes seguidas (no concurrentes). El servidor debe retornar todos los archivos solicitados, incluyendo páginas html e imágenes. Construya un sitio web con javascript para probar su servidor. Despliegue su solución en Heroku. NO use frameworks web como Spark o Spring use solo Java y las librerías para manejo de la red.
 
 ## Getting Started
 
