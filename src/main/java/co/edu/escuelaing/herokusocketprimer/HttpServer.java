@@ -12,8 +12,10 @@ public class HttpServer {
     public static void main(String[] args) throws IOException {
         ServerSocket serverSocket = null;
         ExecutorService pool = null;
+        boolean running = true;
+        int port = getPort();
         try {
-            serverSocket = new ServerSocket(35000);
+            serverSocket = new ServerSocket(port);
             pool = Executors.newCachedThreadPool();
         } catch (IOException e) {
             System.err.println("Could not listen on port: 35000.");
@@ -21,11 +23,20 @@ public class HttpServer {
         }
 
         System.out.println("Listo para recibir ...");
-        while (true) {
+        while (running) {
             Socket clientSocket;
             clientSocket = serverSocket.accept();
             pool.submit(new ConsumerPeticiones(clientSocket));
         }
 
+        serverSocket.close();
+    }
+
+    static int getPort() {
+        if (System.getenv("PORT") != null) {
+            return Integer.parseInt(System.getenv("PORT"));
+        }
+
+        return 36000; // returns default port if heroku-port isn't set (i.e. on localhost)
     }
 }
