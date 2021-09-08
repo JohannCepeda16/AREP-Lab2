@@ -11,7 +11,7 @@ Para hacer uso del proyecto solo debe clonar el repositorio o descargarlo direct
 java -cp target/herokusocketprimer-1.0-SNAPSHOT.jar co.edu.escuelaing.herokusocketprimer.HttpServer
 ```
 
-https://readerarep.herokuapp.com/
+https://serverarep.herokuapp.com/
 
 
 ### Prerequisites

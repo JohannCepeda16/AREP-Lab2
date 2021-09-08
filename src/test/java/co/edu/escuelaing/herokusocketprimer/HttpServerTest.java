@@ -13,10 +13,6 @@ import java.util.logging.Logger;
 import static org.junit.Assert.assertTrue;
 import org.junit.Test;
 
-/**
- *
- * @author Andres Gonzalez
- */
 public class HttpServerTest {
     @Test
     public void Client(){
